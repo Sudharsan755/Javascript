@@ -94,4 +94,41 @@ console.log(++count);
 console.log(count--);
 console.log(--count);
 
+console.error("try again later");
+console.warn("warning");
+
+console.time('timer1');
+function loops() {
+    for (let i = 0; i <= 10000; i++) {
+
+    }
+}
+loops();
+console.timeEnd('timer1');
+console.info('%cThis is a styled info message!', 'color: blue; font-size: 16px; font-weight: bold;');
+console.table([{name: "Amit", age: 30}, {name: "Jatin", age: 25}]);
+
+console.group('User Information');
+console.log('Name: Ritik');
+console.log('Age: 30');
+console.groupEnd();
+console.count("ram");
+console.count("ram");
+console.count("ram");
+console.count("ram");
+console.count("ram");
+console.count("ram");
+console.count("ram");
+
+// control statements
+
+console.log();
+let agee=20;
+if(agee <18){
+    console.log("Not valid");
+}
+else
+{
+    console.log("valid");
+}
 

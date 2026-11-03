@@ -1,7 +1,7 @@
 console.log("arun");
 console.log(10+5);
 console.log("10"+5);
-
+console.log();
 let name="sudharsan";
 let username=name;
 console.log(username);
@@ -15,7 +15,7 @@ console.log(age);
 
 const clg="KIOT";
 console.log(clg);
-console.log("if i reinitialize the clg='ABC' it show an error");
+console.log("if i reinitialize the (const) clg='ABC' it show an error");
 console.log();
 console.log("global scope is var");
 var age1=15;
@@ -54,7 +54,9 @@ console.log(isstudent+" data type is ",typeof isstudent);
 console.log(a+" data type of a ='' ",typeof a);
 console.log(b+" data type of b ",typeof b);
 console.log();
+
 //type conversion
+console.log();
 let a1=5;
 let a2="0";
 let a3=509;
@@ -93,10 +95,14 @@ console.log(count++);
 console.log(++count);
 console.log(count--);
 console.log(--count);
+console.log();
 
+//developer console
+
+console.log("developer console");
+console.log();
 console.error("try again later");
 console.warn("warning");
-
 console.time('timer1');
 function loops() {
     for (let i = 0; i <= 10000; i++) {
@@ -107,7 +113,6 @@ loops();
 console.timeEnd('timer1');
 console.info('%cThis is a styled info message!', 'color: blue; font-size: 16px; font-weight: bold;');
 console.table([{name: "Amit", age: 30}, {name: "Jatin", age: 25}]);
-
 console.group('User Information');
 console.log('Name: Ritik');
 console.log('Age: 30');
@@ -190,21 +195,18 @@ console.log(undefined ?? "Guest");
 console.log(false ?? "Guest");
 console.log("" ?? "Guest");
 
+//looping statements
+
 console.log("Looping statements");
+console.log("while loop");
 let i=1;
 while(i<=10)
 {
     console.log(i);
     i++;
 }
-for(let j=0;j<=20;j+=2)
-{
-    if(j==10)
-    {
-        continue;
-    }
-    console.log(j);
-}
+console.log();
+console.log("difference between wihile and do while");
 
 let k=1;
 while(k<=2){
@@ -219,6 +221,15 @@ do{
 }while(l<=5);
 console.log("value of l",l);
 console.log();
+console.log("for loop");
+for(let j=0;j<=20;j+=2)
+{
+    if(j==10)
+    {
+        continue;
+    }
+    console.log(j);
+}
 console.log("Types of for loop");
 console.log(" for of (used in array or string)");
 let marks=[98,23,45,67];
@@ -306,9 +317,7 @@ function calculateDiscount(price, discount)
 }
 let final_amount=calculateDiscount(500,50);
 console.log(final_amount);
-
-
-
+console.log();
 //function declaration
 console.log("function declaration");
 let display=func1();
@@ -359,7 +368,7 @@ console.log(add1(23,12));
 
 console.log();
 console.log("rest parameter Note: rest operator must always be last parameter");
-console.log("funtion test(a,...vallues) but function test(...values,a)is worng");
+console.log("function test(a,...vallues) but function test(...values,a)is worng");
 function sum1(...numbers)
 {
     let total=0;
@@ -421,7 +430,6 @@ console.log(total);
 console.log();
 console.log();
 
-
 console.log("Object reperesentation");
 let empdetails=
 {name:["ram","raju"],age:[21,23],depart:["MCA","MBA"]
@@ -446,6 +454,190 @@ console.log("destructuring method");
 let {name:name22,age:age22}=user21;
 console.log(name22);
 console.log(age22);
+
+//03/11/2026
+
+console.log("optional Chaining '?.' is used to prevent error and display undefined if value not found.");
+console.log("it is used to check undefined data with nullish coalescing operator ");
+let school={name:"fazil", age:"21"};
+console.log(school?.name);
+console.log(school.address?.city);
+console.log(school.address?.city ??"city not found");
+console.log();
+console.log("another method to check the object has its own property")
+let student = {
+    name: "Arun",
+    age: 21
+};
+console.log(Object.hasOwn(student, "name"));
+console.log(Object.hasOwn(student, "mark"));
+
+console.log(Object.keys(student));
+console.log(Object.values(student));
+console.log(Object.entries(student));
+
+console.log("object copying : shallow copy and deep copy ");
+console.log("shallow copy mean share reference the same object object properties if we change the value value is update for both");
+console.log();
+let stu1 = {
+    name: "Arun",
+    marks: {
+        maths: 90,
+        science: 85
+    }
+};
+let stu2={...stu1};
+stu2.name="Kumar";
+stu2.marks.maths=100;
+console.log(stu1.name);
+console.log(stu1.marks.maths);
+console.log(stu2.name);
+console.log(stu2.marks.maths);
+console.log();
+console.log("deep copy separeate value assigned");
+let stu3=structuredClone(stu1);
+stu3.name="chandran";
+stu3.marks.maths=77;
+console.log(stu1.name);
+console.log(stu1.marks.maths);
+console.log(stu3.name);
+console.log(stu3.marks.maths);
+console.log();
+console.log();
+console.log("error handling");
+
+try{
+    console.log(ape);
+}
+catch(errr)
+{
+    console.log("value not assigned");
+}
+finally
+{
+    console.log("this is a demo check");
+}
+console.log();
+
+let ape=15;
+try
+{
+    if(ape>14)
+    {
+        throw new Error ("Value is greater");
+    }
+    console.log("value is lesser");
+}
+catch(error)
+{
+    console.log(error.message);
+}
+finally
+{
+    console.log("error handled");
+}
+console.log();
+
+//array adding or removing elements
+console.log("array accesing elements");
+let laptops=["Dell","Lenovo","Asus","MSI","Samsung"];
+console.log("default Array");
+console.log(laptops);
+console.log();
+laptops.push("HP");
+console.log("After push");
+console.log(laptops);
+console.log();
+laptops.unshift("ACER");
+console.log("After unshift:add element at begining.");
+console.log(laptops);
+console.log();
+laptops.pop();
+console.log("After pop");
+console.log(laptops);
+console.log();
+laptops.pop();
+console.log("After shift:after removing the first element");
+console.log(laptops);
+console.log();
+console.log("splice(start value, num of values,add item value1,add itemvalue2");
+console.log("splice is used to add remove update values");
+let removalue=laptops.splice(1,2);
+console.log(removalue);
+console.log(laptops);
+laptops.splice(2,0,"Mac");
+console.log("splice the second value 1 used to replace and 0 is to add at position without deleting");
+console.log(laptops);
+laptops.splice(2,1,"chromebook");
+console.log(laptops);
+console.log();
+console.log("slice:is used to display(extract the array) the array based on (startindex,endindex) ");
+let slicelaptops=laptops.slice(0,2);
+console.log(slicelaptops);
+console.log();
+let slice2laptops=laptops.slice(-2);
+console.log(slice2laptops);
+console.log(laptops);
+let mobiles=["Realme","Redmi","ROG","Vivo","Oppo"];
+console.log("concat: to add")
+let lapmob=laptops.concat(mobiles);
+console.log(lapmob);
+console.log();
+console.log("indexOf:find index value");
+console.log(lapmob.indexOf("Vivo"));
+console.log("includes: is used to check whther the value is there are not");
+console.log(lapmob.includes("Realme"));
+console.log(lapmob.includes("Apple"));
+console.log();
+console.log("find():is used to get first achieved value");
+let marrk=[45, 34,78,23,79,1];
+let resmark=marrk.find(function(mk)
+{
+    return mk>70;
+});
+console.log(resmark);
+console.log("findIndex():finds the index value based on condition");
+let resmark1=marrk.findIndex(function(mk)
+{
+    return mk>40;
+});
+console.log(resmark1);
+console.log();
+console.log("array methods(create a new array):foreach() ");
+marrk.forEach(function(mr,index){console.log(index,mr)});
+console.log();
+marrk.forEach(mr=>console.log(mr));
+console.log();
+console.log("map()");
+marrk.map(function(mr){mr=mr+10;
+console.log(mr)});
+let upmarrk=marrk.map(mr=>mr=mr+1);
+console.log(upmarrk);
+console.log();
+console.log("filter");
+let filmark=marrk.filter(mr=>mr>50);
+console.log(filmark);
+console.log();
+console.log("reduce(),sort(),reverse(),join()");
+console.log("reduce is to combine to single output");
+let totalmarrk=marrk.reduce((sum2,mar)=>{return sum2+mar;},0);
+console.log(totalmarrk);
+let sortmarrk=marrk.sort();
+console.log(sortmarrk);
+let revmarrk=marrk.reverse();
+console.log(revmarrk);
+//calling the lapmob it use join()
+console.log("join() is to print the array elemnt as string")
+let lapmobjoiny=lapmob.join();
+console.log(lapmobjoiny);
+console.log(lapmob.join(" - "));//add symbols in between
+console.log();
+console.log("Array.isArray(sadf) is to check whether sadf is an array");
+console.log(Array.isArray(sortmarrk));
+
+
+
+
 
 
 

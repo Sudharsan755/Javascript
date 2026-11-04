@@ -281,7 +281,7 @@ console.log("with parameter");
 
 function printfunc(name)
 {
- console.log(name); 
+   console.log(name); 
 }
 
 printfunc("sudharsan");
@@ -610,7 +610,7 @@ marrk.forEach(mr=>console.log(mr));
 console.log();
 console.log("map()");
 marrk.map(function(mr){mr=mr+10;
-console.log(mr)});
+    console.log(mr)});
 let upmarrk=marrk.map(mr=>mr=mr+1);
 console.log(upmarrk);
 console.log();
@@ -634,6 +634,169 @@ console.log(lapmob.join(" - "));//add symbols in between
 console.log();
 console.log("Array.isArray(sadf) is to check whether sadf is an array");
 console.log(Array.isArray(sortmarrk));
+
+//04/11/2026
+
+console.log();
+//string concepts
+console.log("String Concepts");
+//string creation and type of creation
+console.log("types of string implemntation");
+console.log("back ticks is used to write multiline string and used for print proceessing data");
+let cm="Sivanayagi";
+let cm2='ravi';
+let aageeg=34;
+let cm3=`My name is ${cm} and my age is ${age}.`;
+let cm4="my name is "+cm+ " and my age is" +age;
+console.log();
+
+console.log(cm3);
+console.log(cm4);
+let mesage=`HI MADEM
+HOW ARE YOU
+HOW IS YOUR LIKE GOING`;
+console.log();
+console.log("Accessing Characters");
+console.log(mesage);
+console.log(mesage.length);
+console.log(mesage[3]); //method 1
+console.log(mesage.charAt(3));//method 2
+console.log(mesage.at(-3)); // method 3 access negative from last element
+console.log();
+let cmupdate="C"+cm.slice(5);
+console.log(cmupdate);
+console.log("string case conversion and extraction:");
+//sivanayagi
+console.log(cm.toUpperCase());
+console.log(cm.toLowerCase());
+console.log(cm.toLocaleUpperCase("tr"));
+console.log(cm.toLocaleLowerCase("tr"));
+console.log(cm.slice(4,7));
+console.log(cm.slice(4,5));// slice  start and end index, not second term is not of index
+console.log(cm.slice(-4,-1));//slice can access from reversed way 
+console.log(cm.slice(4));
+console.log(cm.substring(4,7));
+console.log(cm.substring(4,2));//substring only form forward not reversed with negative index
+//substring treats the neagtive elements as 0th index. 
+//note that start value and end value.
+console.log();
+console.log("Joining and Removing Spaces.(concat,trim,trimStart,trimEnd,repeat) ");
+let nametest1="Maha";
+let nametest2="Raja ";
+console.log(nametest1.concat(nametest2));
+console.log(nametest1.concat(" ",nametest2));
+console.log(nametest2.concat(" ",nametest1," ",cm," ",cm2));//multiple string concat
+let nametest3="      ranga raja lu   ";
+console.log(nametest3.trim());//remove spaces at two ends of the string
+console.log(nametest3.trimStart());
+console.log(nametest3.trimEnd());
+console.log(nametest2.repeat(5));
+let sentence="Hello everyone what are you doing? everyone Hello";
+console.log(sentence.indexOf("o",8));//"search the keyvalue and startindex"
+console.log(sentence.indexOf("ver"));
+console.log(sentence.lastIndexOf("everyone"));
+console.log(sentence.includes("z"));
+console.log(sentence.includes("doing"));
+console.log(sentence.startsWith("Hello"));
+console.log(sentence.startsWith("hello"));
+console.log(sentence.endsWith("."));
+console.log(sentence.replace("everyone Hello"," hi"));//does not change the original string.
+console.log(sentence.replace("Hello","Guys"));
+console.log(sentence.replaceAll("Hello","guys"));
+//to replace all with case sensitive
+let word="hello Hello HEllo hello";
+console.log(word.replace("hello","hi"));
+console.log(word.replaceAll("hello","hi"));
+console.log(word.replace(/hello/g, "hi"));//global replace case sensitive
+console.log(word.replace(/hello/gi,"hi"));//global replace without casesensitive
+console.log(word.split(" "));//split into array
+console.log(word.split());
+console.log(word.split("",));
+console.log(word.split("", 8)); //no of character to print
+let sampletext="Javascript is Javascript easy Javascript 9984934898";
+let resolve=sampletext.match("script");
+console.log(resolve);
+console.log(sampletext.match(/[0-9]+/));
+console.log(sampletext.match(/Java/g));
+console.log(sampletext.matchAll(/Javascript/g));
+console.log(sampletext.search("script"));
+console.log();
+console.log("math concepts ");
+
+console.log(parseInt(45));//enter the sirst coming interger value
+console.log(parseInt(34.762));
+console.log(parseInt("25px"));
+console.log(parseInt("hello34"));
+console.log();
+console.log(parseFloat(34.762));
+console.log(parseFloat("25px"));
+console.log(parseFloat("hello34"));
+//javascript math operation
+console.log(Math.round(34.762));//round the number
+console.log(Math.floor(34.762));//round the term downward
+console.log(Math.ceil(34.762));//round the term upward
+console.log(Math.trunc(34.762));//just remove the decimal
+console.log(Math.max(10,40,50));
+console.log(Math.min(10,40,50));
+console.log(Math.abs(-10));
+console.log(Math.sqrt(25));
+console.log(Math.pow(2,3));
+console.log(Math.random());
+
+let numbar=299.34223
+console.log(numbar.toFixed(2));//fix the decimal
+console.log(numbar.toFixed(0));
+console.log(Math.floor(Math.random() * 10) + 1);
+console.log();
+
+//Number Properties
+console.log(Number.isInteger(-10));
+console.log(Number.isFinite(10.4));
+console.log(Number.isNaN(10.4));
+console.log(Number.isNaN(NaN));
+console.log((0.1+0.3).toFixed(7));
+console.log(Number.MAX_VALUE);
+console.log(Number.MIN_VALUE);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(Number.MIN_SAFE_INTEGER);
+
+//date concepts
+console.log();
+console.log("new Date(); is the object used to acces the date");
+let today= new Date();
+console.log(today);//UTC time
+const IndiaTime= new Date().toLocaleString('en-IN',{
+    timeZone:'Asia/Kolkata'
+});
+console.log(IndiaTime);//Indian time
+console.log(today.getFullYear());
+console.log(today.getMonth());
+console.log(today.getDate());
+console.log(today.getDay());
+console.log(today.getHours());
+console.log(today.getMinutes());
+console.log(today.getSeconds());
+console.log(today.toDateString());
+console.log(today.toTimeString());
+console.log(today.toISOString());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

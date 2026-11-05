@@ -245,7 +245,7 @@ for(let character of lang)
 }
 console.log();
 
-console.log(" for in (used in key value pairs)");
+console.log(" for in  returns the index value by default ,(used in key value pairs)");
 let studt={name:"ram",age:34,regno:12232,course:"MCA"};
 for(let details in studt)
 {
@@ -779,6 +779,174 @@ console.log(today.getSeconds());
 console.log(today.toDateString());
 console.log(today.toTimeString());
 console.log(today.toISOString());
+
+// 05/11/2026
+
+//iterator and iterable concepts (symbol.iterator)
+console.log();
+console.log("iterable iterator concept");
+const dailyRoutine=["wakeup","travel","eat","sleep"];
+dailyRoutine.forEach((routine,index)=>console.log(index,routine));
+
+let umbers=[10,20,30];
+console.log(umbers[Symbol.iterator]);
+
+let mbers=[10,20,30];
+let iterator=mbers[Symbol.iterator]();
+console.log(iterator);
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log();
+console.log("all javascript objects are not iterable");
+let student23 = {
+    name: "Ravi",
+    age: 22
+};
+
+for (let key of Object.keys(student23)) {
+    console.log(key);
+}
+
+
+let obj={value:"Sudharsan"};
+let obj1=new Number(100);
+console.log(obj+10);
+//console.log(obj.toString());
+console.log(obj.valueOf());
+console.log(obj1.toString());
+console.log(obj1.valueOf());
+
+console.log();
+console.log("map and set");
+let map=new Map();
+map.set("name","rajender");
+map.set("age",23);
+map.set("isalive",true);
+console.log(map.get("name"));
+map.delete("age");
+console.log(map.has("age"));
+console.log(map);
+console.log(map.size);
+//console.log(map.clear());
+console.log(map);
+map.set(100,"address");
+map.set("timing",9.301);
+//map can use any value as keys while object used string or symbols only
+console.log(map.get("timing"));
+console.log();
+console.log("Set is used store only unique value repetition is skipped");
+let set= new Set();
+set.add(10);
+set.add(20);
+set.add(30);
+set.add(10);
+console.log(set);
+console.log(set.size);
+set.delete(20);
+console.log(set);
+console.log(set.has(10));
+console.log(set.clear());
+
+console.log();
+//display remove duplicates form an array
+let array=["ram","ravi","shankar","ram","dev","khan"];
+let unique= new Set(array);
+console.log(array);
+console.log(unique);
+
+let phone=new Set();
+phone=set.add(9).add(4).add(5).add(6).add(1).add(8).add(5).add(1).add(2).add(0);
+console.log(phone);
+console.log(phone.size);
+//weak map weak set
+
+console.log("weakmap and weakset");
+let student12={name:"Sudharsan"};
+let weakmapeg= new WeakMap();
+weakmapeg.set(student12,"MCA");
+weakmapeg.set(student12,23);
+console.log(student12);
+console.log(weakmapeg.get(student12));
+
+//to acces mulitple values in weakmap access the object as key value pairs;
+weakmapeg.set(student12,{
+    Degree:"MBA", salary:"4000"
+});
+console.log(weakmapeg.get(student12));
+
+////object methods
+let laptop1={
+    brand:"Lenovo",
+    ram:"16GB",price:75000
+};
+console.log(Object.keys(laptop1));
+console.log(Object.values(laptop1));
+console.log(Object.entries(laptop1));
+for(let [lap1,key] of Object.entries(laptop1))
+{
+    console.log(lap1," : ",key);
+}
+let laptop2={
+    brand2:"Acer",
+    ram2:"8GB"
+};
+Object.assign(laptop1,laptop2);
+console.log("laptop1 and laptop2 combine using (assign)");//concat add to objects together
+console.log(laptop1);
+console.log();
+let copyob=Object.assign({},laptop2);
+console.log("copying the one object to newobject");
+console.log(copyob);
+console.log();
+let laptop3={
+    brand2:"DELL",
+    ram2:"8GB"
+};
+console.log(laptop3);
+laptop3.warrenty=2;
+console.log(laptop3);
+Object.freeze(laptop3);
+laptop3.os="Windows";
+laptop3.Edition=2026;
+console.log(laptop3);
+console.log(Object.isFrozen(laptop1));
+console.log(Object.isFrozen(laptop3));
+Object.assign(laptop2,{price:50000});
+console.log(laptop2);
+Object.seal(laptop2);
+laptop2.price=40000;
+laptop2.warrenty=4;
+console.log(laptop2);
+console.log();
+//preventExtensions allow us to edit,delete not to add new keyvalues
+Object.preventExtensions(laptop1);
+delete laptop1.brand2;
+laptop1.brand="Lenovo Yoga";
+laptop1.warrenty=1;
+console.log(laptop1);
+console.log();
+console.log(Object.hasOwn(laptop1,"brand"));
+console.log(Object.hasOwn(laptop1,"brand2"));
+
+//Object destructuring
+//access of data using object
+console.log(laptop1.brand);
+console.log(laptop1.ram);
+console.log();
+//assining the object to another variable name
+let laptopname=laptop1.brand;
+let laptopram=laptop1.ram;
+console.log(laptopname);
+console.log(laptopram);
+console.log();
+// object destructring
+let {brand, ram, price,ram2}=laptop1;
+console.log(brand);
+console.log(ram);
+
 
 
 

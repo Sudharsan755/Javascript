@@ -29,7 +29,6 @@ colors.forEach((key,ans)=>console.log(key," : ",ans));
 console.log();
 console.log();
 console.log();
-console.log();
 
 
 let bike={name:"TVS"};
@@ -98,6 +97,7 @@ for (let dc of dchabitset)
 console.log();
 
 dchabitset.forEach((key,value)=>console.log(key, " ; ",value));
+
 
 
 

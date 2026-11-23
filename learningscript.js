@@ -36,7 +36,7 @@ function print1()
     console.log("inside fuction let "+age4);
 }
 print1();
-console.log("ouside function  var "+age3);
+console.log("ouside function var "+age3);
 //  if i use this it show error console.log("ouside function  let "age4);
 //data types and type of method
 console.log();
@@ -318,7 +318,10 @@ function calculateDiscount(price, discount)
 let final_amount=calculateDiscount(500,50);
 console.log(final_amount);
 console.log();
+
+
 //function declaration
+
 console.log("function declaration");
 let display=func1();
 function func1()
@@ -328,6 +331,7 @@ function func1()
 console.log(display);
 
 //function expression
+
 console.log("function expression");
 let display1=function()
 {
@@ -339,7 +343,6 @@ console.log(ot);
 console.log("callback function");
 function greet(callback) {
     console.log("Welcome");
-
     callback();
 }
 function sayHello() {
@@ -946,24 +949,6 @@ console.log();
 let {brand, ram, price,ram2}=laptop1;
 console.log(brand);
 console.log(ram);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

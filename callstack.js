@@ -94,8 +94,24 @@ counting();
 console.log("globalThis display objects")
 console.log(globalThis);
 console.log();
+
 //creating a new function
 console.log("new function");
 
 let name= new Function("b"," a","return a+b");
 console.log(name("P","Sudharsan "));
+
+
+let count=1;
+let timer=setInterval(function(){
+  console.log(count);
+  count++;
+  if(count>5)
+    {
+      clearInterval(timer);
+    }
+},100);
+let timer1=setTimeout(function(){
+  console.log("Hello");},3000);
+clearTimeout(timer1);
+
